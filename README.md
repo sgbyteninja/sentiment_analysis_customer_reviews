@@ -32,14 +32,55 @@ These metrics are used to assess the model's performance in classifying sentimen
 
 ## Saved Model
 
-The trained model and tokenizer are saved for future use. They are available for download via the following link:
+The model has been fine-tuned on a sentiment analysis task and is hosted on Hugging Face's Model Hub. You can easily load the model and use it for predictions through the Hugging Face API.
 
-[Trained RoBERTa Model and Tokenizer on Google Drive](https://drive.google.com/drive/folders/1bYO7UKGbv5ej6a-sNTuY_fRCkhFyaTaM?usp=sharing)
+Model Name: `sgbyteninja/sentiment_analysis_with_roBERTa`
+
+To interact with the model, you'll need a Hugging Face API key. Follow these steps to access the model using the `transformers` library:
+
+## Usage
+
+To use the model, you can either access it directly via the Hugging Face API or run a local inference script.
+
+### 1. Access the Model via Hugging Face API
+
+To interact with the model, you'll need a Hugging Face API key. Follow these steps to access the model using the `transformers` library:
+
+   **Install the required dependencies**:
+    ```bash
+    pip install transformers torch
+    ```
+
+   **Use the API to perform sentiment analysis**:
+    Here's a Python example of how to use the Hugging Face API to load the model and perform sentiment analysis:
+
+    ```python
+    from transformers import pipeline
+
+    # Your Hugging Face API Key
+    api_key = "YOUR_API_KEY"  # Replace with your Hugging Face API key
+
+    # Load the sentiment analysis pipeline
+    classifier = pipeline("sentiment-analysis", model="sgbyteninja/sentiment_analysis_with_roBERTa", token=api_key)
+
+    # Example text for analysis
+    text = "I love working with Hugging Face!"
+
+    # Get the sentiment analysis result
+    result = classifier(text)
+    print(result)
+    ```
+
+    Replace `"YOUR_API_KEY"` with your Hugging Face API key to use the model. The model will return the sentiment (positive/negative) and its confidence score.
+
+### 2. Local Inference with Example Code
+
+You can also run the inference locally by using the script `inference_example.py` provided in this repository. This script demonstrates how to load the model and perform sentiment analysis locally.
+
+You can also test the model locally by running the `inference_example.py` script in this repository. It allows you to perform sentiment analysis without needing to use the Hugging Face API directly.
+
+You can modify the text in the script or pass other texts for analysis.
 
 ## Conclusion
 
 This project demonstrates how to perform sentiment analysis on Yelp reviews using RoBERTa. By fine-tuning the pre-trained model, we can effectively classify customer reviews into sentiment categories, which can be useful for further analysis or integration into a production system.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
