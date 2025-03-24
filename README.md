@@ -42,44 +42,10 @@ To interact with the model, you'll need a Hugging Face API key. Follow these ste
 
 To use the model, you can either access it directly via the Hugging Face API or run a local inference script.
 
-### 1. Access the Model via Hugging Face API
-
-To interact with the model, you'll need a Hugging Face API key. Follow these steps to access the model using the `transformers` library:
-
-   **Install the required dependencies**:
-    ```bash
-    pip install transformers torch
-    ```
-
-   **Use the API to perform sentiment analysis**:
-    Here's a Python example of how to use the Hugging Face API to load the model and perform sentiment analysis:
-
-    ```python
-    from transformers import pipeline
-
-    # Your Hugging Face API Key
-    api_key = "YOUR_API_KEY"  # Replace with your Hugging Face API key
-
-    # Load the sentiment analysis pipeline
-    classifier = pipeline("sentiment-analysis", model="sgbyteninja/sentiment_analysis_with_roBERTa", token=api_key)
-
-    # Example text for analysis
-    text = "I love working with Hugging Face!"
-
-    # Get the sentiment analysis result
-    result = classifier(text)
-    print(result)
-    ```
-
-    Replace `"YOUR_API_KEY"` with your Hugging Face API key to use the model. The model will return the sentiment (positive/negative) and its confidence score.
-
-### 2. Local Inference with Example Code
-
-You can also run the inference locally by using the script `inference_example.py` provided in this repository. This script demonstrates how to load the model and perform sentiment analysis locally.
-
-You can also test the model locally by running the `inference_example.py` script in this repository. It allows you to perform sentiment analysis without needing to use the Hugging Face API directly.
-
-You can modify the text in the script or pass other texts for analysis.
+1. Install Dependencies
+2. run the python script review_sentiment_analyzer.py
+3. Enter you Hugging Face API Key
+5. Test the Model with Review Texts
 
 ## Conclusion
 
