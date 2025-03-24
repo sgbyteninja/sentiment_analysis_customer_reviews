@@ -1,3 +1,23 @@
+"""
+Sentiment Analysis Tool using Hugging Face's Transformers library.
+
+This script allows users to analyze the sentiment of input text using a pre-trained sentiment analysis model. 
+It prompts the user to enter their Hugging Face API key, then allows the user to input text for sentiment analysis 
+in a loop. The sentiment result is displayed, and the loop continues until the user types 'exit'.
+
+Functions:
+    run_sentiment_analysis(text: str, api_key: str) -> dict:
+        Analyzes the sentiment of the given text using a Hugging Face sentiment analysis model.
+    
+    main() -> None:
+        Main function that runs the user interface and loops for sentiment analysis.
+        
+Usage:
+    - Run the script and provide your Hugging Face API key when prompted.
+    - Enter review text for sentiment analysis or type 'exit' to quit.
+"""
+
+
 from transformers import pipeline
 
 def run_sentiment_analysis(text, api_key):
