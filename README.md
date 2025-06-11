@@ -20,6 +20,8 @@ A pre-trained RoBERTa model is fine-tuned on the Yelp dataset. The training proc
 - A batch size of 8
 - Early stopping based on evaluation loss
 
+The model training and Evaluation was conducted in [Google Colab](https://colab.research.google.com/drive/1f448qyenngeujyvWKleprM5Mt_fbRfO2?usp=sharing), where the full training notebook is available for review and reproduction.
+
 ## Model Evaluation
 
 After training, the model is evaluated using the following metrics:
